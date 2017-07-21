@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CollapsibleTableSectionViewController
+//  Examples
 //
-//  Created by Yong Su on 7/20/17.
+//  Created by Yong Su on 7/21/17.
 //  Copyright © 2017 jeantimex. All rights reserved.
 //
 
