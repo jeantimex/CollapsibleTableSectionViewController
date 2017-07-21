@@ -8,7 +8,7 @@ Swift library to support collapsible sections in a table view.
 
 ## When can I use this pod? ##
 
-This CocoaPod is still under development.
+This CocoaPod is still under development. Can't wait to use it? Please checkout this repo for the implementation: https://github.com/jeantimex/ios-swift-collapsible-table-section.
 
 ## License ##
 
