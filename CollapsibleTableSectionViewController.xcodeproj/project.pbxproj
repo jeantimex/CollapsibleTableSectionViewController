@@ -14,6 +14,10 @@
 		0AC8864C1F2184FD007E4E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8864A1F2184FD007E4E2F /* LaunchScreen.storyboard */; };
 		0AC886571F2184FD007E4E2F /* CollapsibleTableSectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886561F2184FD007E4E2F /* CollapsibleTableSectionViewControllerTests.swift */; };
 		0AC886621F2184FD007E4E2F /* CollapsibleTableSectionViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886611F2184FD007E4E2F /* CollapsibleTableSectionViewControllerUITests.swift */; };
+		0AC886701F218932007E4E2F /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8866F1F218932007E4E2F /* CollapsibleTableSectionViewController.swift */; };
+		0AC886721F218CA8007E4E2F /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886711F218CA8007E4E2F /* CollapsibleTableViewHeader.swift */; };
+		0AC886741F218CE9007E4E2F /* CollapsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886731F218CE9007E4E2F /* CollapsibleTableViewCell.swift */; };
+		0AC886761F218D0F007E4E2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886751F218D0F007E4E2F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		0AC8865D1F2184FD007E4E2F /* CollapsibleTableSectionViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollapsibleTableSectionViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC886611F2184FD007E4E2F /* CollapsibleTableSectionViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewControllerUITests.swift; sourceTree = "<group>"; };
 		0AC886631F2184FD007E4E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC8866F1F218932007E4E2F /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		0AC886711F218CA8007E4E2F /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		0AC886731F218CE9007E4E2F /* CollapsibleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewCell.swift; sourceTree = "<group>"; };
+		0AC886751F218D0F007E4E2F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 				0AC886481F2184FD007E4E2F /* Assets.xcassets */,
 				0AC8864A1F2184FD007E4E2F /* LaunchScreen.storyboard */,
 				0AC8864D1F2184FD007E4E2F /* Info.plist */,
+				0AC8866F1F218932007E4E2F /* CollapsibleTableSectionViewController.swift */,
+				0AC886711F218CA8007E4E2F /* CollapsibleTableViewHeader.swift */,
+				0AC886731F218CE9007E4E2F /* CollapsibleTableViewCell.swift */,
+				0AC886751F218D0F007E4E2F /* Extensions.swift */,
 			);
 			path = CollapsibleTableSectionViewController;
 			sourceTree = "<group>";
@@ -260,7 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC886701F218932007E4E2F /* CollapsibleTableSectionViewController.swift in Sources */,
+				0AC886761F218D0F007E4E2F /* Extensions.swift in Sources */,
 				0AC886441F2184FD007E4E2F /* ViewController.swift in Sources */,
+				0AC886741F218CE9007E4E2F /* CollapsibleTableViewCell.swift in Sources */,
+				0AC886721F218CA8007E4E2F /* CollapsibleTableViewHeader.swift in Sources */,
 				0AC886421F2184FD007E4E2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +526,7 @@
 				0AC886681F2184FD007E4E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC886691F2184FD007E4E2F /* Build configuration list for PBXNativeTarget "CollapsibleTableSectionViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +535,7 @@
 				0AC8866B1F2184FD007E4E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AC8866C1F2184FD007E4E2F /* Build configuration list for PBXNativeTarget "CollapsibleTableSectionViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +544,7 @@
 				0AC8866E1F2184FD007E4E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
