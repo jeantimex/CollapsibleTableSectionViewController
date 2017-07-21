@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "CollapsibleTableSectionViewController"
   s.version      = "0.0.2"
-  s.summary      = "Swift library to support collapsible sections in a table view."
+  s.summary      = "Swift 3.0 library to support collapsible sections in a table view."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,8 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                   Swift library to support collapsible sections in a table view.
+                   This CocoaPod provides the ability to easily setup a UITableView with
+                   collapsible sections. This project is written purely in Swift 3.0.
                    DESC
 
   s.homepage     = "https://github.com/jeantimex/CollapsibleTableSectionViewController"
@@ -80,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jeantimex/CollapsibleTableSectionViewController", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/jeantimex/CollapsibleTableSectionViewController.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
