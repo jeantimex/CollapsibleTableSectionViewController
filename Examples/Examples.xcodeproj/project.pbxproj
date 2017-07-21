@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8BD6401F229BD4003D6155 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */; };
+		0A8BD6411F229BD4003D6155 /* CollapsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */; };
+		0A8BD6421F229BD4003D6155 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */; };
+		0A8BD6431F229BD4003D6155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63F1F229BD4003D6155 /* Extensions.swift */; };
 		0AC886DF1F226627007E4E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886DE1F226627007E4E2F /* AppDelegate.swift */; };
 		0AC886E11F226627007E4E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886E01F226627007E4E2F /* ViewController.swift */; };
 		0AC886E41F226627007E4E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E21F226627007E4E2F /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableSectionViewController.swift; path = ../../Classes/CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewCell.swift; path = ../../Classes/CollapsibleTableViewCell.swift; sourceTree = "<group>"; };
+		0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewHeader.swift; path = ../../Classes/CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		0A8BD63F1F229BD4003D6155 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../Classes/Extensions.swift; sourceTree = "<group>"; };
 		0AC886DB1F226627007E4E2F /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC886DE1F226627007E4E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC886E01F226627007E4E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A8BD63B1F229BB6003D6155 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */,
+				0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */,
+				0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */,
+				0A8BD63F1F229BD4003D6155 /* Extensions.swift */,
+			);
+			name = Classes;
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		0AC886D21F226627007E4E2F = {
 			isa = PBXGroup;
 			children = (
+				0A8BD63B1F229BB6003D6155 /* Classes */,
 				0AC886DD1F226627007E4E2F /* Examples */,
 				0AC886DC1F226627007E4E2F /* Products */,
 			);
@@ -137,7 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8BD6421F229BD4003D6155 /* CollapsibleTableViewHeader.swift in Sources */,
+				0A8BD6431F229BD4003D6155 /* Extensions.swift in Sources */,
+				0A8BD6401F229BD4003D6155 /* CollapsibleTableSectionViewController.swift in Sources */,
 				0AC886E11F226627007E4E2F /* ViewController.swift in Sources */,
+				0A8BD6411F229BD4003D6155 /* CollapsibleTableViewCell.swift in Sources */,
 				0AC886DF1F226627007E4E2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +331,7 @@
 				0AC886EF1F226627007E4E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
