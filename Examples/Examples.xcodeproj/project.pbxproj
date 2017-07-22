@@ -7,22 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8BD6401F229BD4003D6155 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */; };
-		0A8BD6411F229BD4003D6155 /* CollapsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */; };
-		0A8BD6421F229BD4003D6155 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */; };
-		0A8BD6431F229BD4003D6155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD63F1F229BD4003D6155 /* Extensions.swift */; };
 		0AC886DF1F226627007E4E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886DE1F226627007E4E2F /* AppDelegate.swift */; };
 		0AC886E11F226627007E4E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC886E01F226627007E4E2F /* ViewController.swift */; };
 		0AC886E41F226627007E4E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E21F226627007E4E2F /* Main.storyboard */; };
 		0AC886E61F226627007E4E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E51F226627007E4E2F /* Assets.xcassets */; };
 		0AC886E91F226627007E4E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E71F226627007E4E2F /* LaunchScreen.storyboard */; };
+		1954D61128E2AEA6960297AB /* Pods_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540185A9FAB3B385AE8ED8A6 /* Pods_Examples.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableSectionViewController.swift; path = ../../Classes/CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
-		0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewCell.swift; path = ../../Classes/CollapsibleTableViewCell.swift; sourceTree = "<group>"; };
-		0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollapsibleTableViewHeader.swift; path = ../../Classes/CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
-		0A8BD63F1F229BD4003D6155 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../Classes/Extensions.swift; sourceTree = "<group>"; };
 		0AC886DB1F226627007E4E2F /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC886DE1F226627007E4E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC886E01F226627007E4E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +23,9 @@
 		0AC886E51F226627007E4E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC886E81F226627007E4E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AC886EA1F226627007E4E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C62BC05B19E169D1565F49A /* Pods-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Examples/Pods-Examples.release.xcconfig"; sourceTree = "<group>"; };
+		540185A9FAB3B385AE8ED8A6 /* Pods_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A48C72D331DE20192DED484 /* Pods-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Examples/Pods-Examples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,30 +33,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1954D61128E2AEA6960297AB /* Pods_Examples.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A8BD63B1F229BB6003D6155 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0A8BD63C1F229BD4003D6155 /* CollapsibleTableSectionViewController.swift */,
-				0A8BD63D1F229BD4003D6155 /* CollapsibleTableViewCell.swift */,
-				0A8BD63E1F229BD4003D6155 /* CollapsibleTableViewHeader.swift */,
-				0A8BD63F1F229BD4003D6155 /* Extensions.swift */,
-			);
-			name = Classes;
-			path = Examples;
-			sourceTree = "<group>";
-		};
 		0AC886D21F226627007E4E2F = {
 			isa = PBXGroup;
 			children = (
-				0A8BD63B1F229BB6003D6155 /* Classes */,
 				0AC886DD1F226627007E4E2F /* Examples */,
 				0AC886DC1F226627007E4E2F /* Products */,
+				F50AF0A7224297DBF5B5786D /* Pods */,
+				823E10AC88D78C64927963B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +71,23 @@
 			path = Examples;
 			sourceTree = "<group>";
 		};
+		823E10AC88D78C64927963B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				540185A9FAB3B385AE8ED8A6 /* Pods_Examples.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F50AF0A7224297DBF5B5786D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A48C72D331DE20192DED484 /* Pods-Examples.debug.xcconfig */,
+				3C62BC05B19E169D1565F49A /* Pods-Examples.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AC886ED1F226627007E4E2F /* Build configuration list for PBXNativeTarget "Examples" */;
 			buildPhases = (
+				67BC9FB4010BB81E14931700 /* [CP] Check Pods Manifest.lock */,
 				0AC886D71F226627007E4E2F /* Sources */,
 				0AC886D81F226627007E4E2F /* Frameworks */,
 				0AC886D91F226627007E4E2F /* Resources */,
+				2B98B17FB368C4831B7977E1 /* [CP] Embed Pods Frameworks */,
+				C16092C4A63026D0FCAD40F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,16 +159,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B98B17FB368C4831B7977E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Examples/Pods-Examples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67BC9FB4010BB81E14931700 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C16092C4A63026D0FCAD40F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Examples/Pods-Examples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0AC886D71F226627007E4E2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8BD6421F229BD4003D6155 /* CollapsibleTableViewHeader.swift in Sources */,
-				0A8BD6431F229BD4003D6155 /* Extensions.swift in Sources */,
-				0A8BD6401F229BD4003D6155 /* CollapsibleTableSectionViewController.swift in Sources */,
 				0AC886E11F226627007E4E2F /* ViewController.swift in Sources */,
-				0A8BD6411F229BD4003D6155 /* CollapsibleTableViewCell.swift in Sources */,
 				0AC886DF1F226627007E4E2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +336,7 @@
 		};
 		0AC886EE1F226627007E4E2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A48C72D331DE20192DED484 /* Pods-Examples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DJEZ3HHH6P;
@@ -300,6 +351,7 @@
 		};
 		0AC886EF1F226627007E4E2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C62BC05B19E169D1565F49A /* Pods-Examples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DJEZ3HHH6P;
