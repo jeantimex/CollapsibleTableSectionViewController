@@ -68,4 +68,4 @@ This project is licensed under the MIT license, Copyright (c) 2017 Yong Su. For 
 
 Author: [Yong Su](https://github.com/jeantimex) @ Box Inc.
 
-![logo](docs/images/logo.png)
+![jeantimex](docs/images/jeantimex-logo.png)
