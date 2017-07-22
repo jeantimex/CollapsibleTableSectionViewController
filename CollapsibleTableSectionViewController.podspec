@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CollapsibleTableSectionViewController"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "Swift 3.0 library to support collapsible sections in a table view."
 
   # This description is used to generate tags and improve search results.
@@ -92,10 +92,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes/**/*.swift"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "CollapsibleTableSectionViewController/*.{swift}"
+  s.exclude_files = "CollapsibleTableSectionViewController/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  # s.public_header_files = "CollapsibleTableSectionViewController/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
