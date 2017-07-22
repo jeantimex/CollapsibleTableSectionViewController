@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2A0CF1B8B3FEC30AFC260E9C3A58C5E6 /* Pods-Examples-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC67987DCD20B0E11FEC64AD36A08104 /* Pods-Examples-dummy.m */; };
-		2D806E212B56004C3150EA8C52215BB3 /* CollapsibleTableSectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22431B90102D5058ABC3BC47044263FD /* CollapsibleTableSectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F94A2E6C74172AD4EFC319B3E3B3CB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98480A7F90B1213292959E4D646F16 /* Extensions.swift */; };
+		2D806E212B56004C3150EA8C52215BB3 /* CollapsibleTableSectionViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9CA44F239A02B1465B499499E983902 /* CollapsibleTableSectionViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F94A2E6C74172AD4EFC319B3E3B3CB2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E792F4F53E3D82BDD2548BAD24A656CE /* Extensions.swift */; };
 		602B980C71B2A6F1E89E455C1F3321E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		9E03D9F54A8E79D56E36F119405B6658 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7709E3EC985E98EB2809D9255BD58D0 /* CollapsibleTableSectionViewController.swift */; };
+		9E03D9F54A8E79D56E36F119405B6658 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40901DD0329B0CD99DA5643235F7FC6D /* CollapsibleTableSectionViewController.swift */; };
 		9E0A0E7BCCE32BC40C44496BC60C0DE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		B0C10DAB4AB5381E07911DE2296C2503 /* CollapsibleTableSectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCBA07D0E93A64FB1EBD074064EC68 /* CollapsibleTableSectionViewController-dummy.m */; };
-		B9CBC95CEC89B56C5CB8601C08FC0F0C /* CollapsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B8C7868312C5D726AD94E2D4EDDB43 /* CollapsibleTableViewCell.swift */; };
+		B0C10DAB4AB5381E07911DE2296C2503 /* CollapsibleTableSectionViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE26838C539E2AD6AC2B44FB718E805B /* CollapsibleTableSectionViewController-dummy.m */; };
+		B9CBC95CEC89B56C5CB8601C08FC0F0C /* CollapsibleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA640C8B2CE7482907A5AB10D825C1C2 /* CollapsibleTableViewCell.swift */; };
 		E1A5AE58934AA54E3BEBF79570E4AF22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		EA86E580D4690310E09D0360A99B38A0 /* Pods-Examples-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF476AA8B123161C7E43AA19423F34A0 /* Pods-Examples-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDBD94203929E71E34AA07E2ED8D507C /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA02D9B8BD7A00B238EE526CDAD21119 /* CollapsibleTableViewHeader.swift */; };
+		EDBD94203929E71E34AA07E2ED8D507C /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81EBDB5C5865A9E06E1CC68B333E40 /* CollapsibleTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,30 +32,30 @@
 
 /* Begin PBXFileReference section */
 		07C2661B06471E1EF6BB20457DEA2205 /* CollapsibleTableSectionViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollapsibleTableSectionViewController.framework; path = CollapsibleTableSectionViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DAC84DA2A4A11E51228A6D472F73B11 /* CollapsibleTableSectionViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CollapsibleTableSectionViewController.modulemap; sourceTree = "<group>"; };
 		212992D9667EAD3AF415D69AA72A8C39 /* Pods-Examples-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Examples-acknowledgements.plist"; sourceTree = "<group>"; };
-		22431B90102D5058ABC3BC47044263FD /* CollapsibleTableSectionViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-umbrella.h"; sourceTree = "<group>"; };
+		22BDD4A2B125783DF7E90BDA7A748BA9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B038BDA4A2DE18B6392A8EB939D461B /* Pods-Examples-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Examples-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3C98480A7F90B1213292959E4D646F16 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		40901DD0329B0CD99DA5643235F7FC6D /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
 		4B5D175174FED0D211005E28DCCB9A59 /* Pods-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Examples.debug.xcconfig"; sourceTree = "<group>"; };
-		50F19D4AA49348767A248F7EA51F85C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B01107EB1B9BD80E1F283B8EE931EB1 /* Pods-Examples-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Examples-frameworks.sh"; sourceTree = "<group>"; };
-		7253799E91EB8AE04A66A1B7C61632CF /* CollapsibleTableSectionViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-prefix.pch"; sourceTree = "<group>"; };
-		73B8C7868312C5D726AD94E2D4EDDB43 /* CollapsibleTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewCell.swift; sourceTree = "<group>"; };
-		838CDB4EB36B75628C2098204DA7B8EC /* CollapsibleTableSectionViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.xcconfig; sourceTree = "<group>"; };
+		75F9D2EC38E545C2FACA3821912CB964 /* CollapsibleTableSectionViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CollapsibleTableSectionViewController.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4286613166589E2719A2DB5F24F4D3F /* Pods-Examples-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Examples-resources.sh"; sourceTree = "<group>"; };
 		A9CAD72ABED699BF6E5726387A50E8F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEA989834329C60EEEF30AF4F9BC718F /* Pods-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BDD3EE2F75942A736C0F76B03D159F83 /* CollapsibleTableSectionViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTableSectionViewController.xcconfig; sourceTree = "<group>"; };
 		C7A65E463F26A4A1237CAD57F81FB3F3 /* Pods_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Examples.framework; path = "Pods-Examples.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA02D9B8BD7A00B238EE526CDAD21119 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
 		CC67987DCD20B0E11FEC64AD36A08104 /* Pods-Examples-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Examples-dummy.m"; sourceTree = "<group>"; };
 		CF476AA8B123161C7E43AA19423F34A0 /* Pods-Examples-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Examples-umbrella.h"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DBDCBA07D0E93A64FB1EBD074064EC68 /* CollapsibleTableSectionViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTableSectionViewController-dummy.m"; sourceTree = "<group>"; };
+		D9CA44F239A02B1465B499499E983902 /* CollapsibleTableSectionViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-umbrella.h"; sourceTree = "<group>"; };
+		DE26838C539E2AD6AC2B44FB718E805B /* CollapsibleTableSectionViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTableSectionViewController-dummy.m"; sourceTree = "<group>"; };
+		DFC10EBCF2BB0F855B7753C3B621D319 /* CollapsibleTableSectionViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTableSectionViewController-prefix.pch"; sourceTree = "<group>"; };
 		E329317942600C29B668F24E5DFE7E93 /* Pods-Examples.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Examples.modulemap"; sourceTree = "<group>"; };
-		E7709E3EC985E98EB2809D9255BD58D0 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
+		E792F4F53E3D82BDD2548BAD24A656CE /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED81EBDB5C5865A9E06E1CC68B333E40 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		FA640C8B2CE7482907A5AB10D825C1C2 /* CollapsibleTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,38 +79,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F45D4B02419093716A216041B136F97 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E7709E3EC985E98EB2809D9255BD58D0 /* CollapsibleTableSectionViewController.swift */,
-				73B8C7868312C5D726AD94E2D4EDDB43 /* CollapsibleTableViewCell.swift */,
-				CA02D9B8BD7A00B238EE526CDAD21119 /* CollapsibleTableViewHeader.swift */,
-				3C98480A7F90B1213292959E4D646F16 /* Extensions.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		135768E26E2145183071D6007C2964F2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0DAC84DA2A4A11E51228A6D472F73B11 /* CollapsibleTableSectionViewController.modulemap */,
-				838CDB4EB36B75628C2098204DA7B8EC /* CollapsibleTableSectionViewController.xcconfig */,
-				DBDCBA07D0E93A64FB1EBD074064EC68 /* CollapsibleTableSectionViewController-dummy.m */,
-				7253799E91EB8AE04A66A1B7C61632CF /* CollapsibleTableSectionViewController-prefix.pch */,
-				22431B90102D5058ABC3BC47044263FD /* CollapsibleTableSectionViewController-umbrella.h */,
-				50F19D4AA49348767A248F7EA51F85C7 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Examples/Pods/Target Support Files/CollapsibleTableSectionViewController";
-			sourceTree = "<group>";
-		};
 		2483E1BCAF92676B2A1253373DA1BEBA /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C10B9559E478DA7A6B9EB6F8D631EA54 /* CollapsibleTableSectionViewController */,
+				940F8743A46EB46E121561B6B33BDF99 /* CollapsibleTableSectionViewController */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		356E0D42B01364958C36CF1518750B2E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75F9D2EC38E545C2FACA3821912CB964 /* CollapsibleTableSectionViewController.modulemap */,
+				BDD3EE2F75942A736C0F76B03D159F83 /* CollapsibleTableSectionViewController.xcconfig */,
+				DE26838C539E2AD6AC2B44FB718E805B /* CollapsibleTableSectionViewController-dummy.m */,
+				DFC10EBCF2BB0F855B7753C3B621D319 /* CollapsibleTableSectionViewController-prefix.pch */,
+				D9CA44F239A02B1465B499499E983902 /* CollapsibleTableSectionViewController-umbrella.h */,
+				22BDD4A2B125783DF7E90BDA7A748BA9 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Examples/Pods/Target Support Files/CollapsibleTableSectionViewController";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -159,14 +147,26 @@
 			);
 			sourceTree = "<group>";
 		};
-		C10B9559E478DA7A6B9EB6F8D631EA54 /* CollapsibleTableSectionViewController */ = {
+		940F8743A46EB46E121561B6B33BDF99 /* CollapsibleTableSectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0F45D4B02419093716A216041B136F97 /* Classes */,
-				135768E26E2145183071D6007C2964F2 /* Support Files */,
+				C543904CC5E41E56C6A9B0E1839DC1FB /* CollapsibleTableSectionViewController */,
+				356E0D42B01364958C36CF1518750B2E /* Support Files */,
 			);
 			name = CollapsibleTableSectionViewController;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		C543904CC5E41E56C6A9B0E1839DC1FB /* CollapsibleTableSectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40901DD0329B0CD99DA5643235F7FC6D /* CollapsibleTableSectionViewController.swift */,
+				FA640C8B2CE7482907A5AB10D825C1C2 /* CollapsibleTableViewCell.swift */,
+				ED81EBDB5C5865A9E06E1CC68B333E40 /* CollapsibleTableViewHeader.swift */,
+				E792F4F53E3D82BDD2548BAD24A656CE /* Extensions.swift */,
+			);
+			name = CollapsibleTableSectionViewController;
+			path = CollapsibleTableSectionViewController;
 			sourceTree = "<group>";
 		};
 		EAEB2EAEF75D8F895DCE7B12A788B00D /* Products */ = {
@@ -392,7 +392,7 @@
 		};
 		9042C93C8BF14F256BC56C301A1A93E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 838CDB4EB36B75628C2098204DA7B8EC /* CollapsibleTableSectionViewController.xcconfig */;
+			baseConfigurationReference = BDD3EE2F75942A736C0F76B03D159F83 /* CollapsibleTableSectionViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -464,7 +464,7 @@
 		};
 		A4695EAFCEA497F9DF69702C0A462F49 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 838CDB4EB36B75628C2098204DA7B8EC /* CollapsibleTableSectionViewController.xcconfig */;
+			baseConfigurationReference = BDD3EE2F75942A736C0F76B03D159F83 /* CollapsibleTableSectionViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -1,5 +1,5 @@
 PODS:
-  - CollapsibleTableSectionViewController (0.0.5)
+  - CollapsibleTableSectionViewController (0.0.7)
 
 DEPENDENCIES:
   - CollapsibleTableSectionViewController (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CollapsibleTableSectionViewController: a9da9daef5cdea2b0c5830493f5c66509457edb8
+  CollapsibleTableSectionViewController: b56d6bd81f75dc1fd17ca3fb64b40b465f95586d
 
 PODFILE CHECKSUM: b149b5d80e25f3d625e94e3d09cdfbe5a437add7
 
