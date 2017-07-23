@@ -1,5 +1,6 @@
 # CollapsibleTableSectionViewController
 
+[![CocoaPods](https://img.shields.io/cocoapods/v/CollapsibleTableSectionViewController.svg)]()
 [![Build](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController.svg?branch=master)]()
 [![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)]()
 [![Language](https://img.shields.io/badge/swift3-compatible-brightgreen.svg?style=flat)]()
