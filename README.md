@@ -1,5 +1,6 @@
 # CollapsibleTableSectionViewController
 
+[![Build](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController.svg?branch=master)]()
 [![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)]()
 [![Language](https://img.shields.io/badge/swift3-compatible-brightgreen.svg?style=flat)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
