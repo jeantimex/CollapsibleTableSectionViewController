@@ -9,18 +9,14 @@
 import UIKit
 import CollapsibleTableSectionViewController
 
-class ViewController: UIViewController {
-    
-    var sections = [Section]()
+class ViewController: CollapsibleTableSectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Apple Products"
         
-        let controller: CollapsibleTableSectionViewController = CollapsibleTableSectionViewController()
-        
-        controller.sections = [
+        self.sections = [
             Section(name: "Mac", items: [
                 Item(name: "MacBook", detail: "Apple's ultraportable laptop, trading portability for speed and connectivity."),
                 Item(name: "MacBook Air", detail: "While the screen could be sharper, the updated 11-inch MacBook Air is a very light ultraportable that offers great performance and battery life for the price."),
@@ -44,15 +40,6 @@ class ViewController: UIViewController {
                 Item(name: "Accessories", detail: "")
             ])
         ]
-        
-        let tableView: UITableView = controller.tableView
-        
-        var frame = self.view.bounds
-        frame.origin.y = (navigationController?.navigationBar.frame.maxY)!
-        
-        tableView.frame = frame
-        
-        view.addSubview(tableView)
     }
     
 }
