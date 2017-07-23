@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8.3
 xcode_project: CollapsibleTableSectionViewController.xcodeproj
-xcode_scheme: CollapsibleTableSectionViewControllerTest
+xcode_scheme: CollapsibleTableSectionViewController
 xcode_sdk: iphonesimulator9.0
