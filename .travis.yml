@@ -1,5 +1,4 @@
 language: objective-c
 osx_image: xcode8.3
 script:
-- bundle exec danger
 - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,name=iPhone 7' | bundle exec xcpretty -c
