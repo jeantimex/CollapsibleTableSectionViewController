@@ -15,6 +15,16 @@ Swift library to support collapsible sections in a table view.
 
 This CocoaPod is still under development. Can't wait to use it? Please checkout this repo for the implementation: https://github.com/jeantimex/ios-swift-collapsible-table-section.
 
+Release roadmap
+- [x] Cocoa framework development folder structure
+- [x] Add travis CI for unit testing
+- [x] Wrap the collapsible table view in a UIViewController to hide the implementation of collapsing table sections
+- [ ] Interface design, the goal is make this library easy to use and extend for more features in the future
+- [ ] Add test cases, test, test and test
+- [ ] Add several examples in the Examples project
+- [ ] Complete the documentation
+- [ ] Release
+
 ## Requirements
 
 - iOS 9.0+
