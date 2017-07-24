@@ -9,11 +9,20 @@
 import UIKit
 
 //
+// MARK: - CollapsibleTableSectionDelegate
+//
+@objc public protocol CollapsibleTableSectionDelegate {
+    @objc optional func numberOfSections(_ tableView: UITableView) -> Int
+    @objc optional func numberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int
+    @objc optional func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
+}
+
+//
 // MARK: - Section Data Structure
 //
 public struct Item {
-    var name: String
-    var detail: String
+    public var name: String
+    public var detail: String
     
     public init(name: String, detail: String) {
         self.name = name
@@ -22,9 +31,9 @@ public struct Item {
 }
 
 public struct Section {
-    var name: String
-    var items: [Item]
-    var collapsed: Bool
+    public var name: String
+    public var items: [Item]
+    public var collapsed: Bool
     
     public init(name: String, items: [Item], collapsed: Bool = false) {
         self.name = name
@@ -37,6 +46,8 @@ public struct Section {
 // MARK: - View Controller
 //
 open class CollapsibleTableSectionViewController: UIViewController {
+    
+    open var delegate: CollapsibleTableSectionDelegate?
     
     fileprivate var tableView: UITableView!
     
@@ -71,24 +82,17 @@ open class CollapsibleTableSectionViewController: UIViewController {
 extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableViewDelegate {
     
     open func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return delegate?.numberOfSections?(tableView) ?? 1
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].collapsed ? 0 : sections[section].items.count
+        let numberOfRows = delegate?.numberOfRowsInSection?(tableView, section: section) ?? 0
+        return sections[section].collapsed ? 0 : numberOfRows
     }
     
     // Cell
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CollapsibleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CollapsibleTableViewCell ??
-            CollapsibleTableViewCell(style: .default, reuseIdentifier: "cell")
-        
-        let item: Item = sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
-        
-        cell.nameLabel.text = item.name
-        cell.detailLabel.text = item.detail
-        
-        return cell
+        return delegate?.cellForRowAt?(tableView, indexPath: indexPath) ?? UITableViewCell()
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
