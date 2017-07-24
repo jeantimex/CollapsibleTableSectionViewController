@@ -1,14 +1,14 @@
 //
-//  CollapsibleTableViewCell.swift
-//  CollapsibleTableSectionViewController
+//  CustomCell.swift
+//  Examples
 //
-//  Created by Yong Su on 7/20/17.
+//  Created by Yong Su on 7/24/17.
 //  Copyright © 2017 jeantimex. All rights reserved.
 //
 
 import UIKit
 
-class CollapsibleTableViewCell: UITableViewCell {
+class CustomCell: UITableViewCell {
     
     let nameLabel = UILabel()
     let detailLabel = UILabel()

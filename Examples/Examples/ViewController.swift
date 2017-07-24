@@ -15,6 +15,7 @@ class ViewController: CollapsibleTableSectionViewController {
         super.viewDidLoad()
         
         self.title = "Apple Products"
+        self.delegate = self
         
         self.sections = [
             Section(name: "Mac", items: [
@@ -42,5 +43,28 @@ class ViewController: CollapsibleTableSectionViewController {
         ]
     }
     
+}
+
+extension ViewController: CollapsibleTableSectionDelegate {
+    
+    func numberOfSections(_ tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func numberOfRowsInSection(_ tableView: UITableView, section: Int) -> Int {
+        return sections[section].items.count
+    }
+    
+    func cellForRowAt(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CustomCell ??
+            CustomCell(style: .default, reuseIdentifier: "cell")
+        
+        let item: Item = sections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
+        
+        cell.nameLabel.text = item.name
+        cell.detailLabel.text = item.detail
+        
+        return cell
+    }
 }
 
