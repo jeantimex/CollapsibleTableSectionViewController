@@ -36,16 +36,31 @@ public struct Section {
 //
 // MARK: - View Controller
 //
-open class CollapsibleTableSectionViewController: UITableViewController {
+open class CollapsibleTableSectionViewController: UIViewController {
+    
+    fileprivate var tableView: UITableView!
     
     open var sections = [Section]()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        // Create the tableView
+        tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         // Auto resizing the height of the cell
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Auto layout the tableView
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
 }
@@ -53,18 +68,18 @@ open class CollapsibleTableSectionViewController: UITableViewController {
 //
 // MARK: - View Controller DataSource and Delegate
 //
-extension CollapsibleTableSectionViewController {
+extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableViewDelegate {
     
-    override open func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].collapsed ? 0 : sections[section].items.count
     }
     
     // Cell
-    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CollapsibleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CollapsibleTableViewCell ??
             CollapsibleTableViewCell(style: .default, reuseIdentifier: "cell")
         
@@ -76,12 +91,12 @@ extension CollapsibleTableSectionViewController {
         return cell
     }
     
-    override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return sections[(indexPath as NSIndexPath).section].collapsed ? 0 : UITableViewAutomaticDimension
     }
     
     // Header
-    override open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ?? CollapsibleTableViewHeader(reuseIdentifier: "header")
         
         header.titleLabel.text = sections[section].name
@@ -94,11 +109,11 @@ extension CollapsibleTableSectionViewController {
         return header
     }
     
-    override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }
     
-    override open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1.0
     }
     
