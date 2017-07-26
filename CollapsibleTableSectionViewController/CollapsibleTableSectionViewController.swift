@@ -61,10 +61,6 @@ open class CollapsibleTableSectionViewController: UIViewController {
         _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-    public func collapseSection(_ section: Int) -> Void {
-        _sectionsState[section] = false
-    }
-    
 }
 
 //
@@ -126,25 +122,30 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
 //
 extension CollapsibleTableSectionViewController: CollapsibleTableViewHeaderDelegate {
     
-    func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
+    func toggleSection(_ section: Int) {
+        var sectionsNeedReload = [section]
+        
         // Toggle collapse
         let isCollapsed = !isSectionCollapsed(section)
         
         // Update the sections state
         _sectionsState[section] = isCollapsed
         
-        // Refresh the header cell and table view
-        header.setCollapsed(isCollapsed)
-        _tableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
+        let shouldCollapseOthers = delegate?.shouldCollapseOthers?(_tableView) ?? false
         
-        if !isCollapsed {
-            let shouldCollapseOthers = delegate?.shouldCollapseOthers?(_tableView) ?? false
+        if !isCollapsed && shouldCollapseOthers {
+            // Find out which sections need to be collapsed
+            let filteredSections = _sectionsState.filter { !$0.value && $0.key != section }
+            let sectionsNeedCollapse = filteredSections.map { $0.key }
             
-            if shouldCollapseOthers {
-                // TODO ...
-                // Collapse other sections, need a helper function here
-            }
+            // Mark those sections as collapsed in the state
+            for item in sectionsNeedCollapse { _sectionsState[item] = true }
+            
+            // Update the sections that need to be redrawn
+            sectionsNeedReload.append(contentsOf: sectionsNeedCollapse)
         }
+        
+        _tableView.reloadSections(IndexSet(sectionsNeedReload), with: .automatic)
     }
     
 }

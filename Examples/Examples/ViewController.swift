@@ -105,6 +105,10 @@ extension ViewController: CollapsibleTableSectionDelegate {
     func shouldCollapseByDefault(_ tableView: UITableView) -> Bool {
         return false
     }
+    
+    func shouldCollapseOthers(_ tableView: UITableView) -> Bool {
+        return false
+    }
 
 }
 
