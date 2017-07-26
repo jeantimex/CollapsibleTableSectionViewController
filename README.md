@@ -19,7 +19,7 @@ Release roadmap
 - [x] Cocoa framework development folder structure
 - [x] Add travis CI for unit testing
 - [x] Wrap the collapsible table view in a UIViewController to hide the implementation of collapsing table sections
-- [ ] Interface design, the goal is make this library easy to use and extend for more features in the future
+- [x] Basic interface design, the goal is make this library easy to use and extend for more features in the future
 - [ ] Add test cases, test, test and test
 - [ ] Add several examples in the Examples project
 - [ ] Complete the documentation
