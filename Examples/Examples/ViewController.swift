@@ -97,6 +97,14 @@ extension ViewController: CollapsibleTableSectionDelegate {
     func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].name
     }
+    
+    func collapsibleTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected row \(indexPath.row), section \(indexPath.section)")
+    }
+    
+    func shouldCollapseByDefault(_ tableView: UITableView) -> Bool {
+        return false
+    }
 
 }
 
