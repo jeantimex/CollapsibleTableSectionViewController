@@ -127,7 +127,7 @@ Return `true` if you would like collapse all the sections when the table is load
 5. `optional func shouldCollapseOthers(_ tableView: UITableView) -> Bool`<br />
 Return `true` if you would like to keep only one extended section (like accordion style). Default is `false`.
 
-6. `optional func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?`
+6. `optional func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?`<br />
 The title for each section. Default is `nil`.
 
 7. `optional func collapsibleTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)`<br />
