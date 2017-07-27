@@ -13,9 +13,9 @@ Swift library to support collapsible sections in a table view.
 
 ## When can I use this pod?
 
-This CocoaPod is still under development. Can't wait to use it? Please checkout this repo for the implementation: https://github.com/jeantimex/ios-swift-collapsible-table-section.
+This CocoaPod is still under development. 
 
-Release roadmap
+#### Release Roadmap
 - [x] Cocoa framework development folder structure
 - [x] Add travis CI for unit testing
 - [x] Wrap the collapsible table view in a UIViewController to hide the implementation of collapsing table sections
@@ -24,6 +24,8 @@ Release roadmap
 - [ ] Add several examples in the Examples project
 - [ ] Complete the documentation
 - [ ] Release
+
+Can't wait to use it? Please checkout this repo for the implementation: https://github.com/jeantimex/ios-swift-collapsible-table-section.
 
 ## Requirements
 
@@ -37,9 +39,7 @@ Release roadmap
 
 Just clone and add the following Swift files to your project:
 - CollapsibleTableSectionViewController.swfit
-- CollapsibleTableViewCell.swift
 - CollapsibleTableViewHeader.swift
-- Extensions.swift
 
 ### Cocoapods
 
@@ -49,7 +49,7 @@ Just clone and add the following Swift files to your project:
 - `nano Podfile`, add:
 ```
 use_frameworks! 
-pod 'CollapsibleTableSectionViewController', '~> 0.0.9'
+pod 'CollapsibleTableSectionViewController', :git => 'https://github.com/jeantimex/CollapsibleTableSectionViewController.git'
 ``` 
 - Save it: `ctrl-x`, `y`, `enter`
 - `pod update`
@@ -59,7 +59,7 @@ pod 'CollapsibleTableSectionViewController', '~> 0.0.9'
 ### Carthage
 
 * `nano Cartfile`
-* put `github "jeantimex/CollapsibleTableSectionViewController" ~> 0.0.9` into Cartfile
+* put `github "jeantimex/CollapsibleTableSectionViewController" "master"` into Cartfile
 * Save it: `ctrl-x`, `y`, `enter`
 * Run `carthage update`
 * Copy `CollapsibleTableSectionViewController.framework` from `Carthage/Build/iOS` to your project
@@ -68,7 +68,70 @@ pod 'CollapsibleTableSectionViewController', '~> 0.0.9'
 
 ## Usage
 
-This project is still under development, once it's completed, this section will be updated.
+#### Step 1. Subclass `CollapsibleTableSectionViewController`
+
+```swift 
+import CollapsibleTableSectionViewController
+
+class ViewController: CollapsibleTableSectionViewController { ... }
+```
+
+#### Step 2. Conforms to the `CollapsibleTableSectionDelegate` protocol
+
+```swift
+extension ViewController: CollapsibleTableSectionDelegate { ... }
+```
+
+Most of the protocol methods are very similar to `UITableViewDataSource` and `UITableViewDelegate`, if you know how to use them in `UITableViewController`, then you will find our protocol methods easy to use.
+
+Here is a list of the available protocol methods:
+
+1. `optional func numberOfSections(_ tableView: UITableView) -> Int`<br />
+Asks the data source to return the number of sections in the table view. Default is `1`.
+
+```swift
+extension ViewController: CollapsibleTableSectionDelegate {
+  func numberOfSections(_ tableView: UITableView) -> Int {
+    return 10
+  }
+}
+```
+
+2. `optional func collapsibleTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int`<br />
+Returns the number of rows (table cells) in a specified section. Default is `0`.
+
+```swift
+extension ViewController: CollapsibleTableSectionDelegate {
+  func collapsibleTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5
+  }
+}
+```
+
+3. `optional func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell`<br />
+Returns the table cell at the specified index path. You can also use your custom cells, see our example projects for more details.
+
+```swift
+extension ViewController: CollapsibleTableSectionDelegate {
+  func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell? ?? UITableViewCell(style: .Default, reuseIdentifier: "cell")
+    cell.textLabel?.text = "Cell Text"
+    return cell
+  }
+}
+```
+
+4. `optional func shouldCollapseByDefault(_ tableView: UITableView) -> Bool`<br />
+Return `true` if you would like collapse all the sections when the table is loaded. Default is `false`.
+
+5. `optional func shouldCollapseOthers(_ tableView: UITableView) -> Bool`<br />
+Return `true` if you would like to keep only one extended section (like accordion style). Default is `false`.
+
+6. `optional func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?`
+The title for each section. Default is `nil`.
+
+7. `optional func collapsibleTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)`<br />
+Tells the delegate that the specified row is now selected.
 
 ## Contribution
 
