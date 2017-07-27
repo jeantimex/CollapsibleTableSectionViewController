@@ -12,7 +12,6 @@
 		0A8BD67D1F231B2C003D6155 /* CollapsibleTableSectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A8BD66F1F231B2C003D6155 /* CollapsibleTableSectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A8BD68A1F231DF2003D6155 /* CollapsibleTableSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD6861F231DF2003D6155 /* CollapsibleTableSectionViewController.swift */; };
 		0A8BD68C1F231DF2003D6155 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD6881F231DF2003D6155 /* CollapsibleTableViewHeader.swift */; };
-		0A8BD68D1F231DF2003D6155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BD6891F231DF2003D6155 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +33,6 @@
 		0A8BD67C1F231B2C003D6155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8BD6861F231DF2003D6155 /* CollapsibleTableSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableSectionViewController.swift; sourceTree = "<group>"; };
 		0A8BD6881F231DF2003D6155 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
-		0A8BD6891F231DF2003D6155 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 			children = (
 				0A8BD6861F231DF2003D6155 /* CollapsibleTableSectionViewController.swift */,
 				0A8BD6881F231DF2003D6155 /* CollapsibleTableViewHeader.swift */,
-				0A8BD6891F231DF2003D6155 /* Extensions.swift */,
 				0A8BD66F1F231B2C003D6155 /* CollapsibleTableSectionViewController.h */,
 				0A8BD6701F231B2C003D6155 /* Info.plist */,
 			);
@@ -208,7 +205,6 @@
 			files = (
 				0A8BD68C1F231DF2003D6155 /* CollapsibleTableViewHeader.swift in Sources */,
 				0A8BD68A1F231DF2003D6155 /* CollapsibleTableSectionViewController.swift in Sources */,
-				0A8BD68D1F231DF2003D6155 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
