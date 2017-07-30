@@ -33,7 +33,7 @@ open class CollapsibleTableSectionViewController: UIViewController {
     fileprivate var _tableView: UITableView!
     fileprivate var _sectionsState = [Int : Bool]()
     
-    fileprivate func isSectionCollapsed(_ section: Int) -> Bool {
+    public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
             _sectionsState[section] = delegate?.shouldCollapseByDefault?(_tableView) ?? false
         }
