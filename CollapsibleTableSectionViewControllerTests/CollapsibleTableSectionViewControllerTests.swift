@@ -113,4 +113,15 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
         XCTAssertEqual(numberOfRows, 10, "There should be zero rows")
     }
     
+    //
+    // Test CollapsibleTableViewHeader
+    //
+    
+    func testCollapsibleTableViewHeader() {
+        let header = CollapsibleTableViewHeader.init(reuseIdentifier: "Cell")
+        
+        XCTAssertEqual(header.arrowLabel.textColor, UIColor.white)
+        XCTAssertEqual(header.titleLabel.textColor, UIColor.white)
+    }
+    
 }
