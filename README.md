@@ -1,11 +1,11 @@
 # CollapsibleTableSectionViewController
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/CollapsibleTableSectionViewController.svg)](https://cocoapods.org/pods/CollapsibleTableSectionViewController)
-[![Build](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController.svg?branch=master)](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController)
-[![codecov.io](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController/badge.svg?branch=master)](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController?branch=master)
 [![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)]()
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![CocoaPods](https://img.shields.io/cocoapods/v/CollapsibleTableSectionViewController.svg)](https://cocoapods.org/pods/CollapsibleTableSectionViewController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController.svg?branch=master)](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController)
+[![codecov.io](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController/badge.svg?branch=master)](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 Swift library to support collapsible sections in a table view.
