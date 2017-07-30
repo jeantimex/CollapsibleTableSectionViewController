@@ -11,9 +11,12 @@ import XCTest
 
 class CollapsibleTableSectionViewControllerTests: XCTestCase {
     
+    var viewController: CollapsibleTableSectionViewController!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        viewController = CollapsibleTableSectionViewController()
     }
     
     override func tearDown() {
@@ -21,16 +24,93 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    //
+    // Test viewDidLoad
+    //
+    
+    func testViewDidLoad() {
+        let _ = viewController.view
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    //
+    // Test numberOfSections protocol
+    //
+    
+    func testReturnsOnlyOneSection() {
+        let tableView = UITableView()
+        let numberOfSections = viewController.numberOfSections(in: tableView)
+        
+        XCTAssertEqual(numberOfSections, 1, "There should only be one section by default")
+    }
+    
+    func testReturnsDefaultNumberOfSectionsWhenProtocolIsNotImplemented() {
+        // Mock the CollapsibleTableSectionDelegate
+        class MockDelegate: CollapsibleTableSectionDelegate {}
+        
+        viewController.delegate = MockDelegate()
+        
+        let tableView = UITableView()
+        let numberOfSections = viewController.numberOfSections(in: tableView)
+        
+        XCTAssertEqual(numberOfSections, 1, "There should only be 1 section by default")
+    }
+    
+    func testReturnsNumberOfSectionsFromDelegation() {
+        // Mock the CollapsibleTableSectionDelegate
+        class MockDelegate: CollapsibleTableSectionDelegate {
+            func numberOfSections(_ tableView: UITableView) -> Int {
+                return 5
+            }
         }
+        
+        viewController.delegate = MockDelegate()
+        
+        let tableView = UITableView()
+        let numberOfSections = viewController.numberOfSections(in: tableView)
+        
+        XCTAssertEqual(numberOfSections, 5, "There should be 5 sections")
+    }
+    
+    //
+    // Test numberOfRows protocol
+    //
+    
+    func testReturnsZeroNumberOfRowsByDefault() {
+        let tableView = UITableView()
+        let numberOfRows = viewController.tableView(tableView, numberOfRowsInSection: 0)
+        
+        XCTAssertEqual(numberOfRows, 0, "There should be zero rows by default")
+    }
+    
+    func testReturnsZeroNumberOfRowsWhenSectionIsCollapsed() {
+        class MockCollapsibleTableSectionViewController: CollapsibleTableSectionViewController {
+            override public func isSectionCollapsed(_ section: Int) -> Bool {
+                return true
+            }
+        }
+        
+        viewController = MockCollapsibleTableSectionViewController()
+        
+        let tableView = UITableView()
+        let numberOfRows = viewController.tableView(tableView, numberOfRowsInSection: 0)
+        
+        XCTAssertEqual(numberOfRows, 0, "There should be zero rows")
+    }
+    
+    func testReturnsNumberOfRowsFromDelegation() {
+        // Mock the CollapsibleTableSectionDelegate
+        class MockDelegate: CollapsibleTableSectionDelegate {
+            func collapsibleTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 10
+            }
+        }
+        
+        viewController.delegate = MockDelegate()
+        
+        let tableView = UITableView()
+        let numberOfRows = viewController.tableView(tableView, numberOfRowsInSection: 0)
+        
+        XCTAssertEqual(numberOfRows, 10, "There should be zero rows")
     }
     
 }
