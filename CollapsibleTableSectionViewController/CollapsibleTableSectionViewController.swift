@@ -79,7 +79,7 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
     
     // Cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return delegate?.collapsibleTableView?(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
+        return delegate?.collapsibleTableView?(tableView, cellForRowAt: indexPath) ?? UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "DefaultCell")
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,7 +122,7 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
 //
 extension CollapsibleTableSectionViewController: CollapsibleTableViewHeaderDelegate {
     
-    func toggleSection(_ section: Int) {
+    func toggleSection(_ section: Int) -> [Int] {
         var sectionsNeedReload = [section]
         
         // Toggle collapse
@@ -146,6 +146,8 @@ extension CollapsibleTableSectionViewController: CollapsibleTableViewHeaderDeleg
         }
         
         _tableView.reloadSections(IndexSet(sectionsNeedReload), with: .automatic)
+        
+        return sectionsNeedReload
     }
     
 }

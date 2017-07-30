@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CollapsibleTableViewHeaderDelegate {
-    func toggleSection(_ section: Int)
+    func toggleSection(_ section: Int) -> [Int]
 }
 
 open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
@@ -64,7 +64,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
             return
         }
         
-        delegate?.toggleSection(cell.section)
+        _ = delegate?.toggleSection(cell.section)
     }
     
     func setCollapsed(_ collapsed: Bool) {
