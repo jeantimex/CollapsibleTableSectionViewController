@@ -12,7 +12,7 @@ protocol CollapsibleTableViewHeaderDelegate {
     func toggleSection(_ section: Int)
 }
 
-class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
+open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
@@ -20,7 +20,7 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     let titleLabel = UILabel()
     let arrowLabel = UILabel()
     
-    override init(reuseIdentifier: String?) {
+    override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
         // Content View
@@ -52,7 +52,7 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CollapsibleTableViewHeader.tapHeader(_:))))
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
