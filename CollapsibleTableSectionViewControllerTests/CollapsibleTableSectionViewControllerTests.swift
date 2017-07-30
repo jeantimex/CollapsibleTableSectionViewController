@@ -273,6 +273,39 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
     }
     
     //
+    // Test toggleSection
+    //
+    
+    func testReturnsCurrentSectionThatNeedsReload() {
+        let sectionsNeedReload = viewController.getSectionsNeedReload(0)
+        
+        XCTAssertEqual(sectionsNeedReload, [0])
+    }
+    
+    func testReturnsSectionsThatNeedsReload() {
+        // Mock the CollapsibleTableSectionDelegate
+        class MockDelegate: CollapsibleTableSectionDelegate {
+            func shouldCollapseOthers(_ tableView: UITableView) -> Bool {
+                return true
+            }
+        }
+        
+        class MockCollapsibleTableSectionViewController: CollapsibleTableSectionViewController {
+            override public func isSectionCollapsed(_ section: Int) -> Bool {
+                return true
+            }
+        }
+        
+        viewController = MockCollapsibleTableSectionViewController()
+        viewController.delegate = MockDelegate()
+        
+        let _ = viewController.view
+        let sectionsNeedReload = viewController.getSectionsNeedReload(0)
+        
+        XCTAssertEqual(sectionsNeedReload, [0])
+    }
+    
+    //
     // Test header
     //
     
