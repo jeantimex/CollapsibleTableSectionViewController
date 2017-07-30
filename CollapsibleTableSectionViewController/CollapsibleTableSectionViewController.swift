@@ -40,6 +40,32 @@ open class CollapsibleTableSectionViewController: UIViewController {
         return _sectionsState[section]!
     }
     
+    func getSectionsNeedReload(_ section: Int) -> [Int] {
+        var sectionsNeedReload = [section]
+        
+        // Toggle collapse
+        let isCollapsed = !isSectionCollapsed(section)
+        
+        // Update the sections state
+        _sectionsState[section] = isCollapsed
+        
+        let shouldCollapseOthers = delegate?.shouldCollapseOthers?(_tableView) ?? false
+        
+        if !isCollapsed && shouldCollapseOthers {
+            // Find out which sections need to be collapsed
+            let filteredSections = _sectionsState.filter { !$0.value && $0.key != section }
+            let sectionsNeedCollapse = filteredSections.map { $0.key }
+            
+            // Mark those sections as collapsed in the state
+            for item in sectionsNeedCollapse { _sectionsState[item] = true }
+            
+            // Update the sections that need to be redrawn
+            sectionsNeedReload.append(contentsOf: sectionsNeedCollapse)
+        }
+        
+        return sectionsNeedReload
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,32 +148,9 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
 //
 extension CollapsibleTableSectionViewController: CollapsibleTableViewHeaderDelegate {
     
-    func toggleSection(_ section: Int) -> [Int] {
-        var sectionsNeedReload = [section]
-        
-        // Toggle collapse
-        let isCollapsed = !isSectionCollapsed(section)
-        
-        // Update the sections state
-        _sectionsState[section] = isCollapsed
-        
-        let shouldCollapseOthers = delegate?.shouldCollapseOthers?(_tableView) ?? false
-        
-        if !isCollapsed && shouldCollapseOthers {
-            // Find out which sections need to be collapsed
-            let filteredSections = _sectionsState.filter { !$0.value && $0.key != section }
-            let sectionsNeedCollapse = filteredSections.map { $0.key }
-            
-            // Mark those sections as collapsed in the state
-            for item in sectionsNeedCollapse { _sectionsState[item] = true }
-            
-            // Update the sections that need to be redrawn
-            sectionsNeedReload.append(contentsOf: sectionsNeedCollapse)
-        }
-        
+    func toggleSection(_ section: Int) {
+        let sectionsNeedReload = getSectionsNeedReload(section)
         _tableView.reloadSections(IndexSet(sectionsNeedReload), with: .automatic)
-        
-        return sectionsNeedReload
     }
     
 }
