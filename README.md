@@ -21,7 +21,7 @@ This CocoaPod is still under development.
 - [x] Add travis CI for unit testing
 - [x] Wrap the collapsible table view in a UIViewController to hide the implementation of collapsing table sections
 - [x] Basic interface design, the goal is make this library easy to use and extend for more features in the future
-- [ ] Add test cases, test, test and test
+- [x] Add test cases, test, test and test
 - [ ] Add several examples in the Examples project
 - [ ] Complete the documentation
 - [ ] Release
