@@ -75,7 +75,7 @@ class ViewController: CollapsibleTableSectionViewController { ... }
 extension ViewController: CollapsibleTableSectionDelegate { ... }
 ```
 
-## CollapsibleTableSectionDelegate Protocols
+## CollapsibleTableSectionDelegate Protocol
 
 Most of the protocol methods are optional and they are very similar to `UITableViewDataSource` and `UITableViewDelegate`, here is a list of the available protocol methods:
 
@@ -108,7 +108,7 @@ Returns the table cell at the specified index path. You can also use your custom
 ```swift
 extension ViewController: CollapsibleTableSectionDelegate {
   func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell? ?? UITableViewCell(style: .Default, reuseIdentifier: "cell")
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as UITableViewCell? ?? UITableViewCell(style: .default, reuseIdentifier: "Cell")
     cell.textLabel?.text = "Cell Text"
     return cell
   }
