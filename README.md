@@ -22,7 +22,7 @@ This CocoaPod is still under development.
 - [x] Wrap the collapsible table view in a UIViewController to hide the implementation of collapsing table sections
 - [x] Basic interface design, the goal is make this library easy to use and extend for more features in the future
 - [x] Add test cases, test, test and test
-- [ ] Add several examples in the Examples project
+- [x] Add several examples in the Examples project
 - [ ] Complete the documentation
 - [ ] Release
 
