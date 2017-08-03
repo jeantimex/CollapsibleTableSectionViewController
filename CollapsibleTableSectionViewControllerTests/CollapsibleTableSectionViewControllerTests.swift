@@ -150,29 +150,7 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
     // Test heightForRowAt
     //
     
-    func testReturnsZeroWhenSectionIsCollapsed() {
-        class MockCollapsibleTableSectionViewController: CollapsibleTableSectionViewController {
-            override public func isSectionCollapsed(_ section: Int) -> Bool {
-                return true
-            }
-        }
-        
-        viewController = MockCollapsibleTableSectionViewController()
-        
-        let heightForRowAt = viewController.tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))
-        
-        XCTAssertEqual(heightForRowAt, 0)
-    }
-    
     func testReturnsUITableViewAutomaticDimension() {
-        class MockCollapsibleTableSectionViewController: CollapsibleTableSectionViewController {
-            override public func isSectionCollapsed(_ section: Int) -> Bool {
-                return false
-            }
-        }
-        
-        viewController = MockCollapsibleTableSectionViewController()
-        
         let heightForRowAt = viewController.tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))
         
         XCTAssertEqual(heightForRowAt, UITableViewAutomaticDimension)
