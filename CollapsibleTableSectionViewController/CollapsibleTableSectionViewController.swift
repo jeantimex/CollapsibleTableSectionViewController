@@ -109,8 +109,7 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let section = (indexPath as NSIndexPath).section
-        return isSectionCollapsed(section) ? 0 : UITableViewAutomaticDimension
+        return UITableViewAutomaticDimension
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
