@@ -16,7 +16,8 @@ class ExamplesListViewController: UITableViewController {
         ("Basic", "The minimal working example", BasicExampleViewController()),
         ("Custom Cell", "Implement a custom cell programmatically", CustomCellExampleViewController()),
         ("Collapse By Default", "All sections are collapsed by default", CollapseByDefaultExampleViewController()),
-        ("Collapse Others", "Accordion-style table view that only keeps one section expanded at a time", CollapseOthersExampleViewController())
+        ("Collapse Others", "Accordion-style table view that only keeps one section expanded at a time", CollapseOthersExampleViewController()),
+        ("Storyboard", "The minimal working example using Storyboard", UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "StoryboardExampleViewController"))
     ]
     
     override func viewDidLoad() {
