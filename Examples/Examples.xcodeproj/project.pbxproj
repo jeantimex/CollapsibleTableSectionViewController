@@ -18,6 +18,8 @@
 		0AC886E61F226627007E4E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E51F226627007E4E2F /* Assets.xcassets */; };
 		0AC886E91F226627007E4E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC886E71F226627007E4E2F /* LaunchScreen.storyboard */; };
 		1954D61128E2AEA6960297AB /* Pods_Examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540185A9FAB3B385AE8ED8A6 /* Pods_Examples.framework */; };
+		3BD014061F46734000CC3150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD014051F46734000CC3150 /* Main.storyboard */; };
+		3BD014081F46735A00CC3150 /* StoryboardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD014071F46735A00CC3150 /* StoryboardExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		0AC886E51F226627007E4E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC886E81F226627007E4E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AC886EA1F226627007E4E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BD014051F46734000CC3150 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3BD014071F46735A00CC3150 /* StoryboardExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExampleViewController.swift; sourceTree = "<group>"; };
 		3C62BC05B19E169D1565F49A /* Pods-Examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-Examples/Pods-Examples.release.xcconfig"; sourceTree = "<group>"; };
 		540185A9FAB3B385AE8ED8A6 /* Pods_Examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A48C72D331DE20192DED484 /* Pods-Examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Examples/Pods-Examples.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 				0AC886E01F226627007E4E2F /* BasicExampleViewController.swift */,
 				0A6AFF891F2EB15600FA070E /* CollapseByDefaultExampleViewController.swift */,
 				0A6AFF8D1F2EB49100FA070E /* CustomCellExampleViewController.swift */,
+				3BD014071F46735A00CC3150 /* StoryboardExampleViewController.swift */,
 				0A6AFF8F1F2EB6D600FA070E /* CollapseOthersExampleViewController.swift */,
 			);
 			name = ViewControllers;
@@ -84,6 +89,7 @@
 			children = (
 				0A6AFF911F2EB6DE00FA070E /* ViewControllers */,
 				0AC886DE1F226627007E4E2F /* AppDelegate.swift */,
+				3BD014051F46734000CC3150 /* Main.storyboard */,
 				0AC886E51F226627007E4E2F /* Assets.xcassets */,
 				0AC886E71F226627007E4E2F /* LaunchScreen.storyboard */,
 				0AC886EA1F226627007E4E2F /* Info.plist */,
@@ -146,7 +152,6 @@
 				TargetAttributes = {
 					0AC886DA1F226627007E4E2F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = DJEZ3HHH6P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -174,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD014061F46734000CC3150 /* Main.storyboard in Resources */,
 				0AC886E91F226627007E4E2F /* LaunchScreen.storyboard in Resources */,
 				0AC886E61F226627007E4E2F /* Assets.xcassets in Resources */,
 			);
@@ -241,6 +247,7 @@
 				0A6AFF8A1F2EB15600FA070E /* CollapseByDefaultExampleViewController.swift in Sources */,
 				0A6AFF881F2E912100FA070E /* ExamplesListViewController.swift in Sources */,
 				0AC886DF1F226627007E4E2F /* AppDelegate.swift in Sources */,
+				3BD014081F46735A00CC3150 /* StoryboardExampleViewController.swift in Sources */,
 				0A6AFF901F2EB6D600FA070E /* CollapseOthersExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +366,7 @@
 			baseConfigurationReference = 9A48C72D331DE20192DED484 /* Pods-Examples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DJEZ3HHH6P;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -374,7 +381,7 @@
 			baseConfigurationReference = 3C62BC05B19E169D1565F49A /* Pods-Examples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DJEZ3HHH6P;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

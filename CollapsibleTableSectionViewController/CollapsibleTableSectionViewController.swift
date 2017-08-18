@@ -1,11 +1,3 @@
-//
-//  CollapsibleTableSectionViewController.swift
-//  CollapsibleTableSectionViewController
-//
-//  Created by Yong Su on 7/20/17.
-//  Copyright © 2017 jeantimex. All rights reserved.
-//
-
 import UIKit
 
 //
@@ -33,9 +25,19 @@ open class CollapsibleTableSectionViewController: UIViewController {
     fileprivate var _tableView: UITableView!
     fileprivate var _sectionsState = [Int : Bool]()
     
+    @IBOutlet public var tableView: UITableView? {
+        didSet {
+            tableView!.dataSource = self
+            tableView!.delegate = self
+            
+            tableView!.estimatedRowHeight = 44.0
+            tableView!.rowHeight = UITableViewAutomaticDimension
+        }
+    }
+    
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
-            _sectionsState[section] = delegate?.shouldCollapseByDefault?(_tableView) ?? false
+            _sectionsState[section] = delegate?.shouldCollapseByDefault?(tableView ?? _tableView!) ?? false
         }
         return _sectionsState[section]!
     }
@@ -49,7 +51,7 @@ open class CollapsibleTableSectionViewController: UIViewController {
         // Update the sections state
         _sectionsState[section] = isCollapsed
         
-        let shouldCollapseOthers = delegate?.shouldCollapseOthers?(_tableView) ?? false
+        let shouldCollapseOthers = delegate?.shouldCollapseOthers?(tableView ?? _tableView!) ?? false
         
         if !isCollapsed && shouldCollapseOthers {
             // Find out which sections need to be collapsed
@@ -69,22 +71,25 @@ open class CollapsibleTableSectionViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        // Create the tableView
-        _tableView = UITableView()
-        _tableView.dataSource = self
-        _tableView.delegate = self
-        
-        // Auto resizing the height of the cell
-        _tableView.estimatedRowHeight = 44.0
-        _tableView.rowHeight = UITableViewAutomaticDimension
-        
-        // Auto layout the tableView
-        view.addSubview(_tableView)
-        _tableView.translatesAutoresizingMaskIntoConstraints = false
-        _tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
-        _tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
-        _tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        if tableView == nil {
+            
+            // Create the tableView
+            _tableView = UITableView()
+            _tableView.dataSource = self
+            _tableView.delegate = self
+            
+            // Auto resizing the height of the cell
+            _tableView.estimatedRowHeight = 44.0
+            _tableView.rowHeight = UITableViewAutomaticDimension
+            
+            // Auto layout the tableView
+            view.addSubview(_tableView)
+            _tableView.translatesAutoresizingMaskIntoConstraints = false
+            _tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+            _tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+            _tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+            _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        }
     }
     
 }
@@ -133,7 +138,7 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return delegate?.collapsibleTableView?(tableView, heightForHeaderInSection: section) ?? 44.0
+        return delegate?.collapsibleTableView?(tableView, heightForHeaderInSection: section) ?? 30.0
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -149,7 +154,7 @@ extension CollapsibleTableSectionViewController: CollapsibleTableViewHeaderDeleg
     
     func toggleSection(_ section: Int) {
         let sectionsNeedReload = getSectionsNeedReload(section)
-        _tableView.reloadSections(IndexSet(sectionsNeedReload), with: .automatic)
+        (tableView ?? _tableView!).reloadSections(IndexSet(sectionsNeedReload), with: .automatic)
     }
     
 }
