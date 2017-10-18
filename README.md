@@ -7,6 +7,7 @@
 [![Build](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController.svg?branch=master)](https://travis-ci.org/jeantimex/CollapsibleTableSectionViewController)
 [![codecov.io](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController/badge.svg?branch=master)](https://codecov.io/github/jeantimex/CollapsibleTableSectionViewController?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BFXQGY77CV3T2)
 
 Swift library to support collapsible sections in a table view.
 
