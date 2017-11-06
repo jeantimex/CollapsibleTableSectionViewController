@@ -49,7 +49,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         //
         // Call tapHeader when tapping on this header
         //
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CollapsibleTableViewHeader.tapHeader(_:))))
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeader(_:))))
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -59,7 +59,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     //
     // Trigger toggle section when tapping on the header
     //
-    func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let cell = gestureRecognizer.view as? CollapsibleTableViewHeader else {
             return
         }
