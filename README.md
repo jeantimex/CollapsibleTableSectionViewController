@@ -11,7 +11,7 @@
 
 Swift library to support collapsible sections in a table view.
 
-![cover](docs/images/cover.gif)
+![cover](https://user-images.githubusercontent.com/565300/33296447-99433820-d390-11e7-8d05-bcac316e896a.gif)
 
 ## Features
 
