@@ -124,7 +124,7 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
         // Mock the CollapsibleTableSectionDelegate
         class MockDelegate: CollapsibleTableSectionDelegate {
             func collapsibleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                return UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "CustomCell")
+                return UITableViewCell.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "CustomCell")
             }
         }
         
@@ -153,7 +153,7 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
     func testReturnsUITableViewAutomaticDimension() {
         let heightForRowAt = viewController.tableView(tableView, heightForRowAt: IndexPath(row: 0, section: 0))
         
-        XCTAssertEqual(heightForRowAt, UITableViewAutomaticDimension)
+        XCTAssertEqual(heightForRowAt, UITableView.automaticDimension)
     }
     
     //
