@@ -59,7 +59,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     //
     // Trigger toggle section when tapping on the header
     //
-    func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let cell = gestureRecognizer.view as? CollapsibleTableViewHeader else {
             return
         }
@@ -97,7 +97,7 @@ extension UIView {
         animation.toValue = toValue
         animation.duration = duration
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         
         self.layer.add(animation, forKey: nil)
     }
