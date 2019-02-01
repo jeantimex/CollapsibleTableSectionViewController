@@ -17,12 +17,10 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
     
-    let titleLabel = UILabel()
-    let arrowLabel = UILabel()
+    open var titleLabel = UILabel()
+    open var arrowLabel = UILabel()
     
-    override public init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        
+    private func initCommon() {
         // Content View
         contentView.backgroundColor = UIColor(hex: 0x2E3944)
         
@@ -36,7 +34,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         arrowLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
-        
+
         // Title label
         contentView.addSubview(titleLabel)
         titleLabel.textColor = UIColor.white
@@ -52,8 +50,14 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CollapsibleTableViewHeader.tapHeader(_:))))
     }
     
+    override public init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        initCommon()
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        initCommon()
     }
     
     //

@@ -17,6 +17,7 @@ import UIKit
     @objc optional func collapsibleTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     @objc optional func collapsibleTableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     @objc optional func collapsibleTableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    @objc optional func collapsibleTableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     @objc optional func collapsibleTableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     @objc optional func collapsibleTableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     @objc optional func shouldCollapseByDefault(_ tableView: UITableView) -> Bool
@@ -129,7 +130,10 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
         header.section = section
         header.delegate = self
         
-        return header
+        guard let customHeader = delegate?.collapsibleTableView?(tableView, viewForHeaderInSection: section) as? CollapsibleTableViewHeader else { return header }
+        customHeader.section = section
+        customHeader.delegate = self
+        return customHeader
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
