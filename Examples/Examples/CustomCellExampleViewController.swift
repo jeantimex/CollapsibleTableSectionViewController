@@ -47,4 +47,14 @@ extension CustomCellExampleViewController: CollapsibleTableSectionDelegate {
         return sections[section].name
     }
     
+    func collapsibleTableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ??
+            CollapsibleTableViewHeader(reuseIdentifier: "header")
+        headerView.titleLabel.text = self.collapsibleTableView(tableView, titleForHeaderInSection: section)
+        headerView.titleLabel.textColor = .lightGray
+        headerView.contentView.backgroundColor = .darkGray
+        
+        return headerView
+    }
+    
 }

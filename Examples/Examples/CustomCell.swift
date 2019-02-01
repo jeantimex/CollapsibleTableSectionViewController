@@ -13,10 +13,7 @@ class CustomCell: UITableViewCell {
     let nameLabel = UILabel()
     let detailLabel = UILabel()
     
-    // MARK: Initalizers
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+    func initCommon() {
         let marginGuide = contentView.layoutMarginsGuide
         
         // configure nameLabel
@@ -41,8 +38,15 @@ class CustomCell: UITableViewCell {
         detailLabel.textColor = UIColor.lightGray
     }
     
+    // MARK: Initalizers
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        initCommon()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        initCommon()
     }
     
 }
