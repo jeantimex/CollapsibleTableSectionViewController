@@ -17,6 +17,12 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+
 ## Other
 *.moved-aside
 *.xccheckout
