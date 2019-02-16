@@ -43,7 +43,7 @@ Just clone and add the following Swift files to your project:
 - `nano Podfile`, add:
 ```
 use_frameworks! 
-pod 'CollapsibleTableSectionViewController', '~> 1.0.0'
+pod 'CollapsibleTableSectionViewController', '~> 2.0.1'
 ``` 
 - Save it: `ctrl-x`, `y`, `enter`
 - `pod update`
@@ -53,7 +53,7 @@ pod 'CollapsibleTableSectionViewController', '~> 1.0.0'
 ### Carthage
 
 * `nano Cartfile`
-* put `github "jeantimex/CollapsibleTableSectionViewController" ~> 1.0.0` into Cartfile
+* put `github "jeantimex/CollapsibleTableSectionViewController" ~> 2.0.1` into Cartfile
 * Save it: `ctrl-x`, `y`, `enter`
 * Run `carthage update`
 * Copy `CollapsibleTableSectionViewController.framework` from `Carthage/Build/iOS` to your project
