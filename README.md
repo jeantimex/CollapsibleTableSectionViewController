@@ -24,7 +24,7 @@ Swift library to support collapsible sections in a table view.
 ## Requirements
 
 - iOS 9.0+
-- Xcode 8.0+
+- Xcode 10.0+
 - Swift 4.2
 
 ## Installation
