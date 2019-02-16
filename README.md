@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BFXQGY77CV3T2)
 
-Swift library to support collapsible sections in a table view.
+A Swift library that helps you collapse table view sections.
 
 ![cover](https://user-images.githubusercontent.com/565300/33296447-99433820-d390-11e7-8d05-bcac316e896a.gif)
 
