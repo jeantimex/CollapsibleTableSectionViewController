@@ -30,7 +30,7 @@ class ExamplesListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleCell") as UITableViewCell? ?? UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "ExampleCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleCell") as UITableViewCell? ?? UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "ExampleCell")
         let example = examples[indexPath.row]
 
         cell.textLabel?.text = example.title
