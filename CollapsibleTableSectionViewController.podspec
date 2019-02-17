@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CollapsibleTableSectionViewController"
-  s.version      = "2.0.1"
+  s.version      = "2.0.2"
   s.summary      = "Swift 4.2 library to support collapsible sections in a table view."
 
   # This description is used to generate tags and improve search results.
