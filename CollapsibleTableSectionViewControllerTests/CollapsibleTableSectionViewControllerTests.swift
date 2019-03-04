@@ -274,6 +274,29 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
         XCTAssertEqual(delegate.toggled, true)
     }
     
+    func testTapHeader() {
+        
+        class MockDelegate: CollapsibleTableViewHeaderDelegate {
+            func toggleSection(_ section: Int) {}
+        }
+        
+        class MockUITapGestureRecognizer: UITapGestureRecognizer {}
+        
+        class MockCollapsibleTableViewHeader: CollapsibleTableViewHeader {
+            public var tapped: Bool = false
+            @objc override func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
+                 tapped = true
+            }
+        }
+
+        let header = MockCollapsibleTableViewHeader()
+        let gesture = MockUITapGestureRecognizer()
+        let delegate = MockDelegate()
+        header.delegate = delegate
+        header.tapHeader(gesture)
+        XCTAssertEqual(header.tapped, true)
+    }
+    
     func testReturnsCurrentSectionThatNeedsReload() {
         let sectionsNeedReload = viewController.getSectionsNeedReload(0)
         
