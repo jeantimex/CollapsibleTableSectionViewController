@@ -1,6 +1,6 @@
 # CollapsibleTableSectionViewController
 
-[![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)]()
+[![Financial Contributors on Open Collective](https://opencollective.com/CollapsibleTableSectionViewController/all/badge.svg?label=financial+contributors)](https://opencollective.com/CollapsibleTableSectionViewController) [![Platform](https://img.shields.io/badge/platform-ios-blue.svg?style=flat)]()
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![CocoaPods](https://img.shields.io/cocoapods/v/CollapsibleTableSectionViewController.svg)](https://cocoapods.org/pods/CollapsibleTableSectionViewController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -150,6 +150,36 @@ Anyone who would like to contribute to the project is more than welcome.
 * Fork this repo
 * Make your changes
 * Submit pull request
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/jeantimex/CollapsibleTableSectionViewController/graphs/contributors"><img src="https://opencollective.com/CollapsibleTableSectionViewController/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/CollapsibleTableSectionViewController/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/CollapsibleTableSectionViewController"><img src="https://opencollective.com/CollapsibleTableSectionViewController/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/CollapsibleTableSectionViewController/contribute)]
+
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/0/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/1/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/2/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/3/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/4/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/5/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/6/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/7/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/8/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/CollapsibleTableSectionViewController/organization/9/website"><img src="https://opencollective.com/CollapsibleTableSectionViewController/organization/9/avatar.svg"></a>
 
 ## License
 
