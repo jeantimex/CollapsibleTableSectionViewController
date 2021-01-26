@@ -65,6 +65,9 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         }
         
         _ = delegate?.toggleSection(cell.section)
+        UIView.animate(withDuration: 0.2) {
+            self.arrowImageView.transform = .init(rotationAngle: .pi / 2)
+        }
     }
     
     func setCollapsed(_ collapsed: Bool) {
@@ -92,16 +95,11 @@ extension UIColor {
 extension UIView {
     
     func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
-        let animation = CABasicAnimation(keyPath: "transform.rotation")
-        
-        animation.toValue = toValue
-        animation.duration = duration
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        
-        self.layer.add(animation, forKey: nil)
+        UIView.animate(withDuration: duration) {
+            self.transform = .init(rotationAngle: toValue)
+            
+        }
     }
-    
 }
 
 
