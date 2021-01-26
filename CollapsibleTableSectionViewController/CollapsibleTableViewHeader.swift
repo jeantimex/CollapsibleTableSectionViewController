@@ -39,6 +39,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         
         // Arrow label
         contentView.addSubview(arrowImageView)
+        arrowImageView.tintColor = .white
         arrowImageView.contentMode = .scaleAspectFit
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         arrowImageView.widthAnchor.constraint(equalToConstant: 8).isActive = true

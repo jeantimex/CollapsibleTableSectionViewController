@@ -1,5 +1,10 @@
 language: objective-c
 osx_image: xcode12
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - IOS_SDK=iphonesimulator14.0
 script:
   - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,name=iPhone 7'
 after_success:
