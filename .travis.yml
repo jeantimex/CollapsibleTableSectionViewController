@@ -7,6 +7,6 @@ env:
   - IOS_SDK=iphonesimulator14.0
 script:
   - xcodebuild -showsdks
-  - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme 'CollapsibleTableSectionViewController' -sdk $IOS_SDK build analyze
+  - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme 'CollapsibleTableSectionViewController' -destination 'platforms=iOS Simulatior,name=iPhone 12'
 after_success:
   - bash <(curl -s https://codecov.io/bash)
