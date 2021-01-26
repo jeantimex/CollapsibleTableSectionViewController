@@ -90,8 +90,13 @@ open class CollapsibleTableSectionViewController: UIViewController {
         // Auto layout the tableView
         view.addSubview(_tableView)
         _tableView.translatesAutoresizingMaskIntoConstraints = false
-        _tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        _tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            _tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            _tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            _tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+            _tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+        }
         _tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
