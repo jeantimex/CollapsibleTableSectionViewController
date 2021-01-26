@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode12
 script:
- - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,OS=14,name=iPhone 11'
- after_success:
+  - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,OS=14,name=iPhone 11'
+after_success:
   - bash <(curl -s https://codecov.io/bash)
