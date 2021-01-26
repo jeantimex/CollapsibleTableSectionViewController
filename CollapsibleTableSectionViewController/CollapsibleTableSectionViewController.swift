@@ -32,6 +32,8 @@ open class CollapsibleTableSectionViewController: UIViewController {
     
     fileprivate var _tableView: UITableView!
     fileprivate var _sectionsState = [Int : Bool]()
+    open var arrowIcon = UIImage(named: "arrow", in: Bundle.init(identifier: "jeantimex.com.CollapsibleTableSectionViewController"), compatibleWith: nil)
+    open var arrowColor: UIColor! = .white
     
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
@@ -123,9 +125,9 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
         let title = delegate?.collapsibleTableView?(tableView, titleForHeaderInSection: section) ?? ""
         
         header.titleLabel.text = title
-        header.arrowLabel.text = ">"
+        header.arrowImageView.image = self.arrowIcon!.withRenderingMode(.alwaysTemplate)
         header.setCollapsed(isSectionCollapsed(section))
-        
+        header.arrowImageView.tintColor = self.arrowColor
         header.section = section
         header.delegate = self
         
