@@ -14,9 +14,17 @@ protocol CollapsibleTableViewHeaderDelegate {
 
 open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
+    fileprivate var isCollapsed: Bool = false
+    fileprivate var arrowXConstraint: NSLayoutConstraint!
+    
+    var alignment: NSTextAlignment = .left {
+        didSet {
+            self.changeAlignment(alignment: self.alignment)
+        }
+    }
+    
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
-    var isCollapsed: Bool = false
     
     let titleLabel = UILabel()
     let arrowImageView = UIImageView()
@@ -35,12 +43,14 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         arrowImageView.widthAnchor.constraint(equalToConstant: 8).isActive = true
         arrowImageView.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        self.arrowXConstraint = arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor)
+        self.arrowXConstraint.isActive = true
         arrowImageView.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         
         // Title label
         contentView.addSubview(titleLabel)
         titleLabel.textColor = UIColor.white
+        titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
@@ -55,6 +65,18 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func changeAlignment(alignment: NSTextAlignment) {
+        let marginGuide = contentView.layoutMarginsGuide
+        self.arrowXConstraint.isActive = false
+        if alignment == .right {
+            self.arrowXConstraint = arrowImageView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor)
+        } else {
+            self.arrowXConstraint = arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor)
+        }
+        self.arrowXConstraint.isActive = true
+        self.titleLabel.textAlignment = alignment
     }
     
     //
