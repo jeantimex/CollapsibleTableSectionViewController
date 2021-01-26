@@ -33,9 +33,13 @@ open class CollapsibleTableSectionViewController: UIViewController {
     fileprivate var _tableView: UITableView!
     fileprivate var _sectionsState = [Int : Bool]()
     
+    /// Sets the image for the arrow icon.
     open var arrowIcon = UIImage(named: "arrow", in: Bundle.init(identifier: "jeantimex.com.CollapsibleTableSectionViewController"), compatibleWith: nil)
+    /// Sets the color for the arrow icon.
     open var arrowColor: UIColor! = .white
+    /// Sets the background of the sections.
     open var sectionBackgroundColor = UIColor(hex: 0x2E3944)
+    /// Sets the alignment for the entire sections.
     open var sectionAlignment: NSTextAlignment = .left
     
     public func isSectionCollapsed(_ section: Int) -> Bool {
