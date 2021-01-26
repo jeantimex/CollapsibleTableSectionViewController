@@ -16,6 +16,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
+    var isCollapsed: Bool = false
     
     let titleLabel = UILabel()
     let arrowImageView = UIImageView()
@@ -66,7 +67,11 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         
         _ = delegate?.toggleSection(cell.section)
         UIView.animate(withDuration: 0.2) {
-            self.arrowImageView.transform = .init(rotationAngle: .pi / 2)
+            if self.isCollapsed == false {
+                self.arrowImageView.transform = .identity
+            } else {
+                self.arrowImageView.transform = .init(rotationAngle: .pi / 2)
+            }
         }
     }
     
@@ -74,6 +79,7 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         //
         // Animate the arrow rotation (see Extensions.swf)
         //
+        self.isCollapsed = collapsed
         arrowImageView.rotate(collapsed ? 0.0 : .pi / 2)
     }
     
@@ -95,10 +101,7 @@ extension UIColor {
 extension UIView {
     
     func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
-        UIView.animate(withDuration: duration) {
-            self.transform = .init(rotationAngle: toValue)
-            
-        }
+        self.transform = .init(rotationAngle: toValue)
     }
 }
 
