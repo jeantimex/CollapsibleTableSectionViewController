@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10.1
+osx_image: xcode12
 script:
   - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,name=iPhone 7'
 after_success:
