@@ -6,6 +6,7 @@ env:
   - LANG=en_US.UTF-8
   - IOS_SDK=iphonesimulator14.0
 script:
-  - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme CollapsibleTableSectionViewController -destination 'platform=iOS Simulator,name=iPhone 7'
+  - xcodebuild -showsdks
+  - xcodebuild test -project CollapsibleTableSectionViewController.xcodeproj -scheme 'CollapsibleTableSectionViewController' -sdk $IOS_SDK build analyze
 after_success:
   - bash <(curl -s https://codecov.io/bash)
