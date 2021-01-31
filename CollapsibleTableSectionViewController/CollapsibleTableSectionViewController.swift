@@ -59,6 +59,12 @@ open class CollapsibleTableSectionViewController: UIViewController {
             self._tableView.separatorStyle = self.separatorStyle!
         }
     }
+    /// A Boolean value that controls whether the vertical scroll indicator is visible.
+    open var showVerticalScrollIndicator = true {
+        didSet {
+            self._tableView.showsVerticalScrollIndicator = self.showVerticalScrollIndicator
+        }
+    }
     
     /// Registers a class for use in creating new table cells.
     /// - Parameters:
