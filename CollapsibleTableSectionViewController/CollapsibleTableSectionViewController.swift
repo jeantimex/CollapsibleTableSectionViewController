@@ -60,6 +60,14 @@ open class CollapsibleTableSectionViewController: UIViewController {
         }
     }
     
+    /// Registers a class for use in creating new table cells.
+    /// - Parameters:
+    ///   - cellClass: The class of a cell that you want to use in the table (must be a UITableViewCell subclass).
+    ///   - identifier: The reuse identifier for the cell. This parameter must not be nil and must not be an empty string.
+    open func register(_ cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
+        self._tableView.register(cellClass, forCellReuseIdentifier: identifier)
+    }
+    
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
             _sectionsState[section] = delegate?.shouldCollapseByDefault?(_tableView) ?? false
