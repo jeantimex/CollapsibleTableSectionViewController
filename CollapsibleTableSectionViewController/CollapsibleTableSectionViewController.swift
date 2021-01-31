@@ -41,6 +41,12 @@ open class CollapsibleTableSectionViewController: UIViewController {
     open var sectionBackgroundColor = UIColor(hex: 0x2E3944)
     /// Sets the alignment for the entire sections.
     open var sectionAlignment: NSTextAlignment = .left
+    /// Sets the background color for the table view.
+    open var backgroundColor: UIColor = .clear {
+        didSet {
+            self._tableView.backgroundColor = self.backgroundColor
+        }
+    }
     
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
