@@ -47,6 +47,18 @@ open class CollapsibleTableSectionViewController: UIViewController {
             self._tableView.backgroundColor = self.backgroundColor
         }
     }
+    /// Sets the height of each row.
+    open var rowHeight: CGFloat? {
+        didSet {
+            self._tableView.rowHeight = self.rowHeight!
+        }
+    }
+    /// Sets the separation style of the tableview.
+    open var separatorStyle: UITableViewCell.SeparatorStyle? {
+        didSet {
+            self._tableView.separatorStyle = self.separatorStyle!
+        }
+    }
     
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
