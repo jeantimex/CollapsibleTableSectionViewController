@@ -343,7 +343,7 @@ class CollapsibleTableSectionViewControllerTests: XCTestCase {
     func testCollapsibleTableViewHeader() {
         let header = CollapsibleTableViewHeader.init(reuseIdentifier: "Cell")
         
-        XCTAssertEqual(header.arrowLabel.textColor, UIColor.white)
+        XCTAssertEqual(header.arrowImageView.tintColor, UIColor.white)
         XCTAssertEqual(header.titleLabel.textColor, UIColor.white)
     }
     

@@ -33,6 +33,47 @@ open class CollapsibleTableSectionViewController: UIViewController {
     fileprivate var _tableView: UITableView!
     fileprivate var _sectionsState = [Int : Bool]()
     
+    /// Sets the image for the arrow icon.
+    open var arrowIcon = UIImage(named: "arrow", in: Bundle.init(identifier: "jeantimex.com.CollapsibleTableSectionViewController"), compatibleWith: nil)
+    /// Sets the color for the arrow icon.
+    open var arrowColor: UIColor! = .white
+    /// Sets the background of the sections.
+    open var sectionBackgroundColor = UIColor(hex: 0x2E3944)
+    /// Sets the alignment for the entire sections.
+    open var sectionAlignment: NSTextAlignment = .left
+    /// Sets the background color for the table view.
+    open var backgroundColor: UIColor = .clear {
+        didSet {
+            self._tableView.backgroundColor = self.backgroundColor
+        }
+    }
+    /// Sets the height of each row.
+    open var rowHeight: CGFloat? {
+        didSet {
+            self._tableView.rowHeight = self.rowHeight!
+        }
+    }
+    /// Sets the separation style of the tableview.
+    open var separatorStyle: UITableViewCell.SeparatorStyle? {
+        didSet {
+            self._tableView.separatorStyle = self.separatorStyle!
+        }
+    }
+    /// A Boolean value that controls whether the vertical scroll indicator is visible.
+    open var showVerticalScrollIndicator = true {
+        didSet {
+            self._tableView.showsVerticalScrollIndicator = self.showVerticalScrollIndicator
+        }
+    }
+    
+    /// Registers a class for use in creating new table cells.
+    /// - Parameters:
+    ///   - cellClass: The class of a cell that you want to use in the table (must be a UITableViewCell subclass).
+    ///   - identifier: The reuse identifier for the cell. This parameter must not be nil and must not be an empty string.
+    open func register(_ cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
+        self._tableView.register(cellClass, forCellReuseIdentifier: identifier)
+    }
+    
     public func isSectionCollapsed(_ section: Int) -> Bool {
         if _sectionsState.index(forKey: section) == nil {
             _sectionsState[section] = delegate?.shouldCollapseByDefault?(_tableView) ?? false
@@ -81,8 +122,13 @@ open class CollapsibleTableSectionViewController: UIViewController {
         // Auto layout the tableView
         view.addSubview(_tableView)
         _tableView.translatesAutoresizingMaskIntoConstraints = false
-        _tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
-        _tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            _tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            _tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        } else {
+            _tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+            _tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+        }
         _tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         _tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
@@ -123,9 +169,11 @@ extension CollapsibleTableSectionViewController: UITableViewDataSource, UITableV
         let title = delegate?.collapsibleTableView?(tableView, titleForHeaderInSection: section) ?? ""
         
         header.titleLabel.text = title
-        header.arrowLabel.text = ">"
+        header.arrowImageView.image = self.arrowIcon!.withRenderingMode(.alwaysTemplate)
         header.setCollapsed(isSectionCollapsed(section))
-        
+        header.alignment = self.sectionAlignment
+        header.arrowImageView.tintColor = self.arrowColor
+        header.contentView.backgroundColor = self.sectionBackgroundColor
         header.section = section
         header.delegate = self
         

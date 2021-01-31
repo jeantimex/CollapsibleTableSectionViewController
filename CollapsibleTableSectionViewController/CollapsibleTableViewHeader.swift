@@ -14,11 +14,20 @@ protocol CollapsibleTableViewHeaderDelegate {
 
 open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
+    fileprivate var isCollapsed: Bool = false
+    fileprivate var arrowXConstraint: NSLayoutConstraint!
+    
+    var alignment: NSTextAlignment = .left {
+        didSet {
+            self.changeAlignment(alignment: self.alignment)
+        }
+    }
+    
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
     
     let titleLabel = UILabel()
-    let arrowLabel = UILabel()
+    let arrowImageView = UIImageView()
     
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -29,17 +38,20 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         let marginGuide = contentView.layoutMarginsGuide
         
         // Arrow label
-        contentView.addSubview(arrowLabel)
-        arrowLabel.textColor = UIColor.white
-        arrowLabel.translatesAutoresizingMaskIntoConstraints = false
-        arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
-        arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        arrowLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
+        contentView.addSubview(arrowImageView)
+        arrowImageView.tintColor = .white
+        arrowImageView.contentMode = .scaleAspectFit
+        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+        arrowImageView.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        arrowImageView.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
+        self.arrowXConstraint = arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor)
+        self.arrowXConstraint.isActive = true
+        arrowImageView.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         
         // Title label
         contentView.addSubview(titleLabel)
         titleLabel.textColor = UIColor.white
+        titleLabel.textAlignment = .left
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
@@ -56,6 +68,18 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    fileprivate func changeAlignment(alignment: NSTextAlignment) {
+        let marginGuide = contentView.layoutMarginsGuide
+        self.arrowXConstraint.isActive = false
+        if alignment == .right {
+            self.arrowXConstraint = arrowImageView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor)
+        } else {
+            self.arrowXConstraint = arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor)
+        }
+        self.arrowXConstraint.isActive = true
+        self.titleLabel.textAlignment = alignment
+    }
+    
     //
     // Trigger toggle section when tapping on the header
     //
@@ -65,13 +89,21 @@ open class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         }
         
         _ = delegate?.toggleSection(cell.section)
+        UIView.animate(withDuration: 0.2) {
+            if self.isCollapsed == false {
+                self.arrowImageView.transform = .identity
+            } else {
+                self.arrowImageView.transform = .init(rotationAngle: .pi / 2)
+            }
+        }
     }
     
     func setCollapsed(_ collapsed: Bool) {
         //
         // Animate the arrow rotation (see Extensions.swf)
         //
-        arrowLabel.rotate(collapsed ? 0.0 : .pi / 2)
+        self.isCollapsed = collapsed
+        arrowImageView.rotate(collapsed ? 0.0 : .pi / 2)
     }
     
 }
@@ -92,16 +124,8 @@ extension UIColor {
 extension UIView {
     
     func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
-        let animation = CABasicAnimation(keyPath: "transform.rotation")
-        
-        animation.toValue = toValue
-        animation.duration = duration
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        
-        self.layer.add(animation, forKey: nil)
+        self.transform = .init(rotationAngle: toValue)
     }
-    
 }
 
 
